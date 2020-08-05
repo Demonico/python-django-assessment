@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% load static i18n %}
+{#{% block title %}{% trans 'Movie' %}: {{ object.title }}{% endblock %}#}
+{% block content %}
+    <h3>{% trans 'Ratings' %}</h3>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Rating</th>
+            <th>Comment</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for rating in rating_list %}
+            <tr>
+                <td>{{ rating.rating }}</td>
+                <td>{{ rating.comments }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock content %}

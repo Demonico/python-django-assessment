@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{#{% block title %}{% trans 'Movie' %}{% endblock %}#}
+
+{% block content %}
+    <h3>Rate a movie.</h3>
+    {# action="{% url 'movies:detail' movie_id %}" #}
+    <form class="form-horizontal" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="control-group">
+            <div class="controls">
+                <button type="submit" class="btn btn-primary">
+                    {% trans 'Rate' %}
+                </button>
+            </div>
+        </div>
+    </form>
+
+{% endblock %}
